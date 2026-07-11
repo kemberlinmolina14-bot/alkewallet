@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alke Wallet - Enviar Dinero</title>
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        #autocomplete-results {
+            position: absolute;
+            z-index: 1000;
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Encabezado -->
+    <header class="bg-primary text-white py-3 shadow-sm" style="background-color: #0A2540 !important;">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="h4 mb-0">Alke Wallet 💳</h1>
+            <a href="menu.html" class="btn btn-outline-light btn-sm">⬅ Volver al Menú</a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container my-5">
+        <div class="row">
+
+            <!-- COLUMNA 1: FORMULARIO DE ENVÍO -->
+            <div class="col-lg-7 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body p-4">
+                        <h2 class="h4 mb-3 font-weight-bold">Transferir Fondos</h2>
+                        <p class="text-muted small mb-4">Envía dinero de forma inmediata escribiendo el nombre de tu
+                            contacto.</p>
+
+                        <form id="form-send-money">
+                            <div class="form-group position-relative">
+                                <label for="search-contact" class="font-weight-bold">Buscar Contacto
+                                    Destinatario</label>
+                                <input type="text" id="search-contact" class="form-control"
+                                    placeholder="Escribe el nombre del contacto..." autocomplete="off" required>
+                                <div id="autocomplete-results" class="list-group list-group-flush"
+                                    style="display: none;"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="send-amount" class="font-weight-bold">Monto a Enviar (CLP)</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="number" id="send-amount"
+                                        class="form-control form-control-lg text-danger font-weight-bold" min="1"
+                                        placeholder="Ej: 15000" required>
+                                </div>
+                                <small class="text-muted">Revisa tu saldo disponible en el menú principal antes de
+                                    enviar.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="send-comment" class="font-weight-bold">Comentario (Opcional)</label>
+                                <input type="text" id="send-comment" class="form-control"
+                                    placeholder="Ej: Pago de almuerzo">
+                            </div>
+
+                            <button type="submit"
+                                class="btn btn-primary btn-block btn-lg font-weight-bold mt-4 shadow-sm"
+                                style="background-color: #0A2540; border-color: #0A2540;">
+                                Enviar Fondos 💸
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA 2: LISTA DE CONTACTOS AGENDADOS -->
+            <div class="col-lg-5 mb-4">
+                <div class="card shadow-sm border-0 h-100">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h3 class="h5 mb-0 font-weight-bold">Mis Contactos</h3>
+                            <button class="btn btn-primary btn-sm rounded-circle shadow-sm" data-toggle="modal"
+                                data-target="#modalNuevoContacto"
+                                style="background-color: #0A2540; border-color: #0A2540; width: 32px; height: 32px; font-weight: bold;">+</button>
+                        </div>
+                        <p class="text-muted small mb-4">Tu agenda rápida de transferencias habituales.</p>
+
+                        <ul class="list-group list-group-flush" id="lista-contactos">
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                <div>
+                                    <h4 class="h6 mb-0 font-weight-bold">Kimberly Molina</h4>
+                                    <small class="text-muted">kimb@correo.com</small>
+                                </div>
+                                <span class="badge badge-pill badge-light border text-muted">Frecuente</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                <div>
+                                    <h4 class="h6 mb-0 font-weight-bold">Juan Pérez</h4>
+                                    <small class="text-muted">juan.perez@correo.com</small>
+                                </div>
+                                <span class="badge badge-pill badge-light border text-muted">Ahorro</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center px-0 py-3">
+                                <div>
+                                    <h4 class="h6 mb-0 font-weight-bold">María López</h4>
+                                    <small class="text-muted">maria.l@correo.com</small>
+                                </div>
+                                <span class="badge badge-pill badge-light border text-muted">Familiar</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- MODAL 1: ÉXITO DE TRANSFERENCIA -->
+    <div class="modal fade" id="modalExitoTransferencia" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-body p-5 text-center">
+                    <span class="display-3 text-primary">✓</span>
+                    <h3 class="h4 font-weight-bold mt-3">Transacción Completada</h3>
+                    <p class="text-muted" id="transfer-detail-text">Tu dinero ha sido enviado con éxito.</p>
+                    <!-- Agregamos un ID específico al botón para controlarlo por jQuery -->
+                    <button type="button" id="btn-redirigir-transferencia"
+                        class="btn btn-primary btn-block btn-lg mt-4 font-weight-bold shadow-sm"
+                        style="background-color: #0A2540; border-color: #0A2540;">
+                        Volver al Inicio
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: FORMULARIO PARA AGREGAR NUEVO CONTACTO -->
+    <div class="modal fade" id="modalNuevoContacto" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header text-white" style="background-color: #0A2540;">
+                    <h5 class="modal-title font-weight-bold">Agendar Nuevo Contacto</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="form-add-contact">
+                        <div class="form-group">
+                            <label for="contact-name" class="font-weight-bold">Nombre Completo</label>
+                            <input type="text" id="contact-name" class="form-control" placeholder="Ej: Carlos Silva"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email" class="font-weight-bold">Correo Electrónico</label>
+                            <input type="email" id="contact-email" class="form-control" placeholder="carlos@correo.com"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block mt-4 font-weight-bold">Guardar
+                            Contacto</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-3 text-muted bg-white border-top mt-auto">
+        <small>&copy; 2026 Alke Wallet - Evaluación Frontend</small>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

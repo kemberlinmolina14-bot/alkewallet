@@ -1,0 +1,117 @@
+/* ==========================================================================
+   VARIABLES Y CONFIGURACIÓN GENERAL (Paleta Fintech Premium)
+   ========================================================================== */
+:root {
+    --primary-fintech: #0A2540;
+    /* Azul ejecutivo profundo (seguridad) */
+    --accent-fintech: #635BFF;
+    /* Morado estilo Stripe/Fintech moderna */
+    --success-fintech: #00D4B2;
+    /* Verde esmeralda (ingresos/saldos) */
+    --danger-fintech: #FF5A5F;
+    /* Rojo suave (egresos/alertas) */
+    --bg-light-fintech: #F8F9FA;
+    /* Fondo gris claro premium */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-light-fintech) !important;
+    color: #333333;
+}
+
+/* ==========================================================================
+   HEADER Y COMPONENTES DE INTERFAZ
+   ========================================================================== */
+/* Forzamos el color corporativo real en las barras superiores de la app */
+.bg-dark-fintech,
+header,
+.navbar {
+    background-color: var(--primary-fintech) !important;
+}
+
+/* Tarjetas financieras estilizadas */
+.card {
+    border: none !important;
+    border-radius: 12px !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto levitativo sutil al pasar el mouse por encima de los botones o tarjetas del menú */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(10, 37, 64, 0.08) !important;
+}
+
+/* ==========================================================================
+   BOTONES Y FORMULARIOS PERSONALIZADOS
+   ========================================================================== */
+.btn-primary {
+    background-color: var(--accent-fintech) !important;
+    border-color: var(--accent-fintech) !important;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #4B45D3 !important;
+    border-color: #4B45D3 !important;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+    padding: 10px 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto de enfoque cuando el usuario pincha un cuadro de texto */
+.form-control:focus {
+    border-color: var(--accent-fintech) !important;
+    box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.15) !important;
+}
+
+/* ==========================================================================
+   ESTILOS PERSONALIZADOS PARA HISTORIAL (LECCIÓN 3: OPTIMIZACIÓN DE DATOS)
+   ========================================================================== */
+/* Badges personalizados para ingresos y egresos sin usar el fondo plano de Bootstrap */
+.badge-success-light {
+    background-color: rgba(0, 212, 178, 0.12) !important;
+    color: #00A388 !important;
+    font-weight: 600;
+}
+
+.badge-danger-light {
+    background-color: rgba(255, 90, 95, 0.12) !important;
+    color: #D93B40 !important;
+    font-weight: 600;
+}
+
+/* Ajuste fino para la tabla de transacciones */
+.table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    /* ¡CORREGIDO AQUÍ! Ahora es una propiedad válida */
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: #718096;
+    border-bottom: 2px solid #EDF2F7 !important;
+}
+
+.table td {
+    border-top: 1px solid #EDF2F7 !important;
+}
+
+/* ==========================================================================
+   AUTOCOMPLETADO (LECCIÓN 6)
+   ========================================================================== */
+#autocomplete-results {
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+    margin-top: 2px;
+}
+
+.item-sugerido:hover {
+    background-color: rgba(99, 91, 255, 0.05) !important;
+    color: var(--accent-fintech) !important;
+}
