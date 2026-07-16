@@ -1,0 +1,12 @@
+[33mdfed035[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m fix: solucionar error 404 de favicon en login.html
+[33m19d6507[m fix: solucionar error 404 de favicon
+[33m9e1cdea[m fix: solucionar error 404 de favicon en login.html
+[33m32f0a76[m[33m ([m[1;31morigin/main[m[33m)[m docs: añadir README explicativo del proyecto
+[33m9b1b766[m docs: añadir README explicativo del proyecto
+[33m0bed536[m primer commit
+[33m7f90b25[m primer commit
+[33ma463eaa[m primer commit
+[33m2a929a7[m primer commit
+[33mab21c0d[m primer commit
+[33m919b571[m primer commit
+[33mfe5c6c1[m[33m ([m[1;31morigin/feature/transacciones[m[33m, [m[1;31morigin/feature/login[m[33m, [m[1;31morigin/feature/depositos[m[33m, [m[1;32mfeature/transacciones[m[33m, [m[1;32mfeature/login[m[33m, [m[1;32mfeature/depositos[m[33m)[m chore: estructura inicial del proyecto Alke Wallet con HTML y Bootstrap
