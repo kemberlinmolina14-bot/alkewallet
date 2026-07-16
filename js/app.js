@@ -206,4 +206,15 @@ $(document).ready(function () {
             tbody.append(fila);
         });
     }
+    // --- LÓGICA DE CIERRE DE SESIÓN ---
+    $(document).on("click", "#btn-logout", function (event) {
+        // Evitamos que se redireccione antes de limpiar los datos
+        event.preventDefault();
+
+        // Removemos los datos de sesión del usuario
+        localStorage.removeItem("wallet_user");
+
+        // Redirigimos de forma segura a la página principal de bienvenida
+        window.location.href = "index.html";
+    });
 });

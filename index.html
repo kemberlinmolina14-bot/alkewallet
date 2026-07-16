@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alke Wallet - Bienvenido</title>
+    <!-- Vinculamos tu archivo de estilos existente -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Estilo rápido exclusivo para centrar la tarjeta de bienvenida en la pantalla -->
+    <style>
+        .welcome-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .welcome-card {
+            max-width: 450px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(10, 37, 64, 0.05);
+        }
+
+        .welcome-logo {
+            color: var(--primary-fintech);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .welcome-subtitle {
+            color: #64748B;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .btn-welcome {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            text-decoration: none;
+            color: #ffffff !important;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="welcome-wrapper">
+        <!-- Reutilizamos tu clase .card para que herede el borde redondeado y el efecto hover al pasar el mouse -->
+        <div class="card welcome-card">
+
+            <!-- Título con el azul ejecutivo profundo (--primary-fintech) -->
+            <h1 class="welcome-logo">Alke Wallet</h1>
+
+            <p class="welcome-subtitle">
+                Gestiona tus finanzas de forma rápida, segura y digital con nuestra plataforma premium.
+            </p>
+
+            <!-- Botón que hereda exactamente tu estilo morado (--accent-fintech) de .btn-primary -->
+            <a href="login.html" class="btn btn-primary btn-welcome">
+                Ingresar a mi cuenta
+            </a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
