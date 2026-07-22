@@ -14,6 +14,3 @@ Una aplicación de billetera digital (Fintech) desarrollada como proyecto integr
 *   **CSS3 & Bootstrap 4:** Diseño adaptativo (Responsive Design) con una paleta de colores Fintech Premium y transiciones fluidas.
 *   **JavaScript & jQuery:** Manipulación dinámica del DOM, validaciones de formularios y control de eventos.
 *   **Git & GitHub:** Control de versiones estructurado por ramas independientes de trabajo.
-
-##  Desarrollador
-*   **Nombre:** Kemberlin Molina
